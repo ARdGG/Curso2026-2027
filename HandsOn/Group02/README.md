@@ -1,4 +1,4 @@
-Alfredo Rodríguez de Guzmán González
-Pablo Álvarez Avendaño
-Javier Ustáriz García
-Daniel Castellanos Bores
+Alfredo Rodríguez de Guzmán González, Github user: ARdGG
+Pablo Álvarez Avendaño, Github user: Paniel05 
+Javier Ustáriz García, Github user: just585
+Daniel Castellanos Bores, Github user: DaniCaste10
