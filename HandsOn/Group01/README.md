@@ -4,3 +4,4 @@
 
 - Hugo Moreno Fidalgo - GitHub: @Hugix43
 - Antonio Manuel Rodríguez González - GitHub: @luchs3185
+- Zhuoren Cheng - GitHub: @dpdispe5679
