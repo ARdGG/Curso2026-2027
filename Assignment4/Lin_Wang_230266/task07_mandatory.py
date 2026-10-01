@@ -9,8 +9,8 @@ Original file is located at
 **Task 07: Querying RDF(s)**
 """
 
-!pip install rdflib
-!pip install oeg-sw-class
+#!pip install rdflib
+#!pip install oeg-sw-class
 github_storage = "https://raw.githubusercontent.com/FacultadInformatica-LinkedData/Curso2026-2027/master/Assignment4/course_materials"
 
 """Spanish: Primero leemos los ficheros RDF
@@ -180,8 +180,8 @@ SELECT DISTINCT ?name WHERE {
   ?class rdfs:subClassOf* ns:Person .
 
   ?ind rdfs:label ?name .
-  ?ind2 ns:ownsPet ?pet .
-  ?ind ns:hasColleague+ ?ind2 .
+  ?ind1 ns:ownsPet ?pet .
+  ?ind ns:hasColleague+ ?ind1 .
 }
 """
 
