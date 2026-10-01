@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Application Requirements - BreatheMadrid</title>
 
     <style>
@@ -35,6 +36,7 @@
 <body>
 
 <h1>Application Requirements: BreatheMadrid</h1>
+<p>This document describes the application planned for later course assignments. Hands-on 1 delivers dataset selection, requirements and interface mockups; it does not deliver a working application.</p>
 
 <div class="section">
     <h2>1. Application Description</h2>
@@ -104,6 +106,7 @@
 
 <div class="section">
     <h2>4. Functional Requirements</h2>
+    <p>The files and external linking plan are detailed in <a href="datasetRequirements.html">Dataset Requirements</a>. Measurements will be joined using ESTACION and the stations file's CODIGO_CORTO. In the RDF model, observations will reference their stations, and stations their municipality, Madrid, linked to Wikidata Q2807.</p>
 
     <ul>
         <li>The user can select an area of Madrid.</li>
@@ -142,7 +145,13 @@
             The user can filter the information displayed on the map by
             pollutant.
         </li>
+        <li>The station detail view shows an hourly trend for the selected pollutant, using only available observations and marking gaps.</li>
+        <li>Every reading displays its unit, timestamp, source and availability status. Pollutants not measured at a station are shown as unavailable.</li>
     </ul>
+    <p>The user will select a location on the map; stations will be ranked by distance using their decimal latitude and longitude. Availability of the selected pollutant must also be checked. The application will display station observations, rather than claim an exact pollution measurement at the user's location.</p>
+    <p>The local CSV is a one-day snapshot suitable for the initial prototype. A later live version will periodically retrieve the official feed, display the last successful update and mark stale data. A rolling 24-hour chart requires retaining observations from the previous day; until then, the chart covers only available hours.</p>
+    <p>Air quality categories will follow a documented official air quality index selected during implementation, with its source and averaging periods stated. Recommendations will use the same categories and display insufficient data when the necessary observations are missing. The mockup values and colors do not define thresholds.</p>
+    <p>The notification button is an optional future enhancement: a user could opt in to an alert when a selected station's category improves. Notifications are outside the initial prototype scope.</p>
 </div>
 
 
@@ -177,6 +186,7 @@
         The following mock-ups represent the three main views of the
         BreatheMadrid application.
     </p>
+    <p><strong>Illustrative designs:</strong> Values, colors, distances, map positions and station labels are examples, not observations extracted from the CSV. The first image includes PM10 and O3 for Plaza de España, and the third includes PM10 for Retiro; these combinations are not supported by the selected station metadata. In the application, those fields will show “Not measured at this station”, or use a suitable station with its name clearly displayed. The “All values validated” footer is placeholder wording and will be replaced with the actual source/availability status; automatic real-time readings must not be presented as finally validated.</p>
 
     <h3>6.1 Air Quality and Activity View</h3>
     <p>
@@ -185,7 +195,7 @@
     </p>
 
     
-    <img src="mockups/mockup1.png"
+    <img src="mockups/mockup1_home.png"
          alt="BreatheMadrid air quality and activity view">
 
 
@@ -196,7 +206,8 @@
     </p>
 
     
-    <img src="mockups/mockup2.png"
+    <p>Marker numbers illustrate pollutant concentrations, not station identifiers. The implemented map will show the selected pollutant and unit; the “All” view will use category labels rather than mix concentrations of different pollutants.</p>
+    <img src="mockups/mockup2_map.png"
          alt="BreatheMadrid monitoring stations map">
 
 
@@ -207,7 +218,7 @@
     </p>
 
     
-    <img src="mockups/mockup3.png"
+    <img src="mockups/mockup3_station_detail.png"
          alt="BreatheMadrid station detail">
 </div>
 

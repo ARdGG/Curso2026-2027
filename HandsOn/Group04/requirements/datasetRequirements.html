@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dataset Requirements - Group 04</title>
     <style>
         body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
@@ -13,10 +14,15 @@
 <body>
 
 <h1>Justification of the Datasets Used</h1>
+<p>Publisher: Ayuntamiento de Madrid, Dirección General de Sostenibilidad y Control Ambiental. The selected files are:</p>
+<ul>
+    <li><a href="../csv/212629-0-estaciones-control-aire-csv.csv">Station metadata CSV</a>: 24 stations and 25 columns. <a href="https://datos.madrid.es/dataset/212629-0-estaciones-control-aire">Official dataset page</a>.</li>
+    <li><a href="../csv/calair_tiemporeal.csv">Hourly measurements CSV</a>: 126 records and 56 columns, covering 1 October 2026. <a href="https://datos.madrid.es/dataset/212531-0-calidad-aire-tiempo-real">Official dataset page</a>. The local file is a static snapshot, not a continuously updated feed.</li>
+</ul>
 
 <div class="req">
     <b>R1 – Satisfied.</b>
-    Both datasets belong to the environment and public health domain within a smart city context. They provide air quality monitoring data, including pollutant measurements (NO2, SO2, CO, PM10, PM2.5, O3) collected across the city of Madrid, which is directly related to environmental sustainability and citizen well-being.
+    Both datasets belong to the environment domain within a Smart City context. The stations file provides locations and equipment metadata; its X indicators identify monitored pollutants, not concentrations. The measurement file provides hourly pollutant concentrations in Madrid. Together they support urban environmental monitoring and citizen information.
 </div>
 
 <div class="req">
@@ -26,7 +32,7 @@
 
 <div class="req">
     <b>R3 – Satisfied.</b>
-    Both datasets are published under a Creative Commons Attribution 4.0 International (CC BY 4.0) license on the Madrid Open Data portal (<a href="https://datos.madrid.es">https://datos.madrid.es</a>), which allows their reuse and publication with proper attribution.
+    Both official dataset pages linked above identify <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>. This open license permits redistribution and adaptation, including publication of derived RDF. Publication will credit Ayuntamiento de Madrid, link to the source datasets and license, and indicate modifications such as RDF conversion. The CSV files retain the downloaded data; their exact download time was not recorded.
 </div>
 
 <div class="req">
@@ -40,12 +46,12 @@
 
 <div class="req">
     <b>R5 – Satisfied.</b>
-    The Madrid Open Data portal provides documentation for both datasets, including descriptions of each column and their possible values.
+    Documentation is available for both datasets: <a href="https://datos.madrid.es/dataset/212629-0-estaciones-control-aire/resource/212629-2-estaciones-control-aire/download/212629-2-estaciones-control-aire.pdf">Station file structure</a> describes station fields and equipment indicators; <a href="https://datos.madrid.es/dataset/212531-0-calidad-aire-tiempo-real/resource/212531-4-calidad-aire-tiempo-real/download/212531-4-calidad-aire-tiempo-real.pdf">Air quality file interpreter</a> explains hourly records, station and magnitude codes, units and local time. Hourly values H01-H24 must be interpreted together with their corresponding V01-V24 indicators; unavailable or invalid observations must not be treated as zero concentrations. The official real-time source states that automatic readings are pending review and validation.
 </div>
 
 <div class="req">
-    <b>R6 – Partially satisfied.</b>
-    Both datasets come from the same data source (Madrid Open Data portal). However, they represent complementary information: one provides the location and metadata of the monitoring stations, while the other contains the actual pollutant measurements in real time. They can be cross-referenced through the station code.
+    <b>R6 – Not used (optional).</b>
+    Both selected CSV datasets come from one provider, the Madrid Open Data portal. Multiple source providers are therefore not used. The datasets are complementary and can be joined through station codes. Wikidata is a planned external linking target under R4, rather than a second source of the selected CSV data.
 </div>
 
 </body>
