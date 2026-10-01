@@ -27,16 +27,16 @@
 
 <h2>2. Requirements</h2>
 
-<h3>R1. Data are in one of the selected smart city domains <span class="ok">Satisfied</span></h3>
+<h3>R1. Data are in one of the selected smart city domains <span class="ok"></span></h3>
 <p>The datasets describe urban sports and leisure facilities (pitches, courts, sports centres, pools) and the sports entities that use them. They belong to the leisure/sport and urban facilities domain of a smart city, and relate to citizens' health and well-being.</p>
 
-<h3>R2. Data are available as a CSV file <span class="ok">Satisfied</span></h3>
+<h3>R2. Data are available as a CSV file <span class="ok"></span></h3>
 <p>All three datasets are downloadable as CSV and are stored in the <code>csv</code> directory. The files are semicolon-separated and encoded in ISO-8859-1. Conversion to UTF-8 will be needed before RDF generation.</p>
 
-<h3>R3. Data have an open licence <span class="ok">Satisfied</span></h3>
+<h3>R3. Data have an open licence <span class="ok"></span></h3>
 <p>All three datasets are published under Creative Commons Attribution 4.0 International (CC BY 4.0). It allows copying, adapting and republishing, including in RDF form, as long as the original source is credited. We will credit the Ayuntamiento de Madrid in the published data.</p>
 
-<h3>R4. Data can be easily linked with generic real-world entities <span class="ok">Satisfied</span></h3>
+<h3>R4. Data can be easily linked with generic real-world entities <span class="ok"></span></h3>
 <p>The three datasets share the same 32 columns. Entities that can be linked:</p>
 <table>
 <tr><th>Entity in our data</th><th>Column(s)</th><th>Can be linked with</th></tr>
@@ -47,13 +47,12 @@
 <tr><td>Street and postal code</td><td><code>NOMBRE-VIA</code>, <code>CODIGO-POSTAL</code></td><td>Madrid street directory (callejero), GeoNames postal codes</td></tr>
 <tr><td>Facility types (football pitch, futsal court, skating rink, swimming pool, ...)</td><td><code>TIPO</code></td><td>Wikidata sport and venue classes; DBpedia sports</td></tr>
 </table>
-<p>Entities in other datasets that could be linked with ours: Madrid metro and bus stops (to describe transport access to a facility), municipal parks (Group 02's dataset), BiciMAD stations (Group 03's dataset), tourist accommodations (Group 01's dataset), The three datasets can also be linked with each other: a swimming pool is often located in a sports centre.</p>
+<p>Other sources that could be linked with ours: Madrid metro and bus stops (to describe transport access to a facility) and other open datasets on the same portal, such as municipal parks or BiciMAD stations. The three datasets can also be linked with each other: a swimming pool is often located in a sports centre.</p>
+<h3>R5. Documentation exists (optional) <span class="part"></span></h3>
+<p>Each dataset has a description page on the Madrid open data portal with the update frequency, the unit that publishes it and the licence. The column names are mostly self-explanatory, but we did not find an explanation for some codes, for example what the values 0, 1, 2 and 3 mean in <code>ACCESIBILIDAD</code>.</p>
 
-<h3>R5. Documentation exists (optional) <span class="part">Partially satisfied</span></h3>
-<p>The Madrid portal publishes a description page for each dataset, with update frequency, responsible unit and licence, and a structure guide for the sports datasets. Some codes are not explained in the pages we checked, notably the meaning of the values 0, 1, 2 and 3 in <code>ACCESIBILIDAD</code>; we will check the City Council's structure guide to confirm them before modelling.</p>
-
-<h3>R6. Data can come from multiple data sources (optional) <span class="part">Partially satisfied</span></h3>
-<p>The three datasets are separate datasets on the same portal and share a single publisher, the Ayuntamiento de Madrid, so the data comes from one organisation. We will bring in other sources when linking: Wikidata and DBpedia for districts, neighbourhoods and the city, and, if useful, Madrid transport stops or the datasets of other groups.</p>
+<h3>R6. Data can come from multiple data sources (optional) <span class="part"></h3>
+<p>All three datasets come from the same portal and the same publisher (Ayuntamiento de Madrid), so on their own they are one source, not several. The other sources come when we link the data: Wikidata, DBpedia and GeoNames for districts, neighbourhoods and the city, and possibly Madrid transport stops.</p>
 
 <h2>3. Data quality notes</h2>
 <table>
