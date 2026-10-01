@@ -2,4 +2,7 @@
 
 ## Group members
 
-* Jiaxu He - [chachojiaxu](https://github.com/chachojiaxu)
+Jiaxu He - chachojiaxu
+Chrysler Jeremi Muñoz Vidal - dechrysler
+Lucas Daniel Benítez Maidana - LucassProgramming
+
