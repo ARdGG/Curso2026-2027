@@ -15,7 +15,7 @@
 
 - [x] Identifies the licenses of all the selected datasets
 - [x] Identifies those entities in the selected datasets that can be linked with entities in other datasets
-- [ ] Identifies those entities in other datasets that can be linked with entities in the selected datasets
+- [x] Identifies those entities in other datasets that can be linked with entities in the selected datasets
 
 **The "applicationRequirements.html" file:**
 
@@ -23,4 +23,4 @@
 
 ## Comments on the self-assessment
 
-Specific external entities and their URIs still need to be identified. This assessment will be updated when this pending item is completed.
+R4 identifies Madrid in Wikidata (Q2807) as an external linking target, using municipality code 28079, and explains how to connect the two local datasets through station codes.
