@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Application Requirements - BreatheMadrid</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 24pt;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        img {
+            max-width: 100%;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Application Requirements: BreatheMadrid</h1>
+
+<div class="section">
+    <h2>1. Application Description</h2>
+
+    <p>
+        BreatheMadrid is an application designed to help people in Madrid
+        decide whether it is a good moment to carry out outdoor activities
+        depending on the current air quality.
+    </p>
+
+    <p>
+        The user can select an area of Madrid and choose an activity such as
+        running, cycling or walking. The application uses real-time air quality
+        measurements together with the geographical information of the
+        monitoring stations to show the air conditions of the selected area.
+    </p>
+
+    <p>
+        The application displays the main pollutant measurements and provides
+        a simple recommendation based on the current air quality. Users can
+        also explore the monitoring stations on a map and open each station
+        to see its location and detailed measurements.
+    </p>
+</div>
+
+
+<div class="section">
+    <h2>2. Target Users</h2>
+
+    <p>
+        The application is intended for residents and visitors in Madrid who
+        want to check the air quality before carrying out outdoor activities,
+        especially walking, running or cycling.
+    </p>
+</div>
+
+
+<div class="section">
+    <h2>3. Data Sources</h2>
+
+    <p>
+        BreatheMadrid uses two complementary datasets from the Madrid Open
+        Data portal.
+    </p>
+
+    <ul>
+        <li>
+            <strong>Real-time air quality dataset:</strong>
+            provides pollutant measurements recorded by the monitoring
+            stations.
+        </li>
+
+        <li>
+            <strong>Air quality monitoring stations dataset:</strong>
+            provides the name, address and geographical coordinates of each
+            monitoring station.
+        </li>
+    </ul>
+
+    <p>
+        Both datasets can be connected through the station identifier,
+        allowing the pollutant measurements to be associated with the
+        physical location of each monitoring station.
+    </p>
+</div>
+
+
+<div class="section">
+    <h2>4. Functional Requirements</h2>
+
+    <ul>
+        <li>The user can select an area of Madrid.</li>
+
+        <li>
+            The user can select an outdoor activity such as running,
+            cycling or walking.
+        </li>
+
+        <li>
+            The application displays the current air quality information
+            obtained from nearby monitoring stations.
+        </li>
+
+        <li>
+            The application displays measurements of pollutants such as
+            NO2, PM10 and O3.
+        </li>
+
+        <li>
+            The application provides a simple recommendation for the selected
+            outdoor activity based on the current air quality.
+        </li>
+
+        <li>
+            The user can view the air quality monitoring stations on an
+            interactive map.
+        </li>
+
+        <li>
+            The user can select a monitoring station to view its location
+            and pollutant measurements.
+        </li>
+
+        <li>
+            The user can filter the information displayed on the map by
+            pollutant.
+        </li>
+    </ul>
+</div>
+
+
+<div class="section">
+    <h2>5. User Interface</h2>
+
+    <p>
+        The main screen shows the air quality information for the selected
+        area and allows the user to choose an outdoor activity. The most
+        relevant pollutant measurements are displayed together with a simple
+        air quality indication.
+    </p>
+
+    <p>
+        A second view contains an interactive map showing the monitoring
+        stations in Madrid. The user can filter the stations by pollutant
+        and select one of them.
+    </p>
+
+    <p>
+        When a station is selected, the application displays a detailed view
+        containing its name, location and the latest available pollutant
+        measurements.
+    </p>
+</div>
+
+
+<div class="section">
+    <h2>6. User Interface Mock-ups</h2>
+
+    <p>
+        The following mock-ups represent the three main views of the
+        BreatheMadrid application.
+    </p>
+
+    <h3>6.1 Air Quality and Activity View</h3>
+    <p>
+        This view shows the current air quality, the main pollutant values
+        and the activity selected by the user.
+    </p>
+
+    
+    <img src="mockups/mockup1.png"
+         alt="BreatheMadrid air quality and activity view">
+
+
+    <h3>6.2 Monitoring Stations Map</h3>
+    <p>
+        This view allows the user to explore monitoring stations on a map
+        and filter them according to the pollutant being analysed.
+    </p>
+
+    
+    <img src="mockups/mockup2.png"
+         alt="BreatheMadrid monitoring stations map">
+
+
+    <h3>6.3 Station Detail</h3>
+    <p>
+        This view shows detailed information about a selected monitoring
+        station and its pollutant measurements.
+    </p>
+
+    
+    <img src="mockups/mockup3.png"
+         alt="BreatheMadrid station detail">
+</div>
+
+
+<div class="section">
+    <h2>7. Expected Outcome</h2>
+
+    <p>
+        The expected outcome is an application that makes Madrid air
+        quality data easier to understand and use, helping citizens make
+        more informed decisions before carrying out outdoor activities.
+    </p>
+</div>
+
+</body>
+</html>
