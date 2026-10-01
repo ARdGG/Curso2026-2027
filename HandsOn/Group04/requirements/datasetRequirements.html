@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Dataset Requirements - Group 04</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+        h1 { font-size: 24pt; }
+        .req { margin-bottom: 20px; }
+        .req b { display: block; margin-bottom: 4px; }
+    </style>
+</head>
+<body>
+
+<h1>Justification of the Datasets Used</h1>
+
+<div class="req">
+    <b>R1 – Satisfied.</b>
+    Both datasets belong to the environment and public health domain within a smart city context. They provide air quality monitoring data, including pollutant measurements (NO2, SO2, CO, PM10, PM2.5, O3) collected across the city of Madrid, which is directly related to environmental sustainability and citizen well-being.
+</div>
+
+<div class="req">
+    <b>R2 – Satisfied.</b>
+    Both datasets are available in CSV format. They use semicolons (;) as delimiters, which is a standard convention in European CSV files.
+</div>
+
+<div class="req">
+    <b>R3 – Satisfied.</b>
+    Both datasets are published under a Creative Commons Attribution 4.0 International (CC BY 4.0) license on the Madrid Open Data portal (<a href="https://datos.madrid.es">https://datos.madrid.es</a>), which allows their reuse and publication with proper attribution.
+</div>
+
+<div class="req">
+    <b>R4 – Satisfied.</b>
+    The first dataset (estaciones-control-aire) contains station names, street addresses, and geographic coordinates (latitude and longitude), which can be linked to real-world entities in Wikidata, DBpedia, or GeoNames. The second dataset (calair_tiemporeal) uses province, municipality, and station codes (e.g., province 28 for Madrid, municipality 079) that correspond to official INE codes and can also be linked to external knowledge bases. Additionally, both datasets can be linked to each other through the station code.
+</div>
+
+<div class="req">
+    <b>R5 – Satisfied.</b>
+    The Madrid Open Data portal provides documentation for both datasets, including descriptions of each column and their possible values.
+</div>
+
+<div class="req">
+    <b>R6 – Partially satisfied.</b>
+    Both datasets come from the same data source (Madrid Open Data portal). However, they represent complementary information: one provides the location and metadata of the monitoring stations, while the other contains the actual pollutant measurements in real time. They can be cross-referenced through the station code.
+</div>
+
+</body>
+</html>
