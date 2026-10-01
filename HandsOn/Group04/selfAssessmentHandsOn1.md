@@ -24,3 +24,5 @@
 ## Comments on the self-assessment
 
 R4 identifies Madrid in Wikidata (Q2807) as an external linking target, using municipality code 28079, and explains how to connect the two local datasets through station codes.
+
+The three mockups are included and linked from the application requirements. Their values are illustrative; the document explains station coverage limitations and planned handling of unavailable readings. R6 is optional and is not used because both CSV datasets come from the same provider.
