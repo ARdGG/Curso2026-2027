@@ -1,4 +1,4 @@
-# Hands-on Assignment 1 - Group 04
+# Hands-on Assignment 1 - Group 08
 
 ## Group members
 
