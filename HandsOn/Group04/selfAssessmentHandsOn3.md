@@ -26,7 +26,15 @@
 
 **Dataset: calair_tiemporeal.csv (air quality measurements)**
 
-- [ ] Data was imported correctly into OpenRefine
-- [ ] Data was analysed for errors and inconsistencies
-- [ ] Necessary transformations were applied to facilitate RDF generation
-- [ ] No duplicate or conflicting rows were found
+- [x] Data was imported correctly into OpenRefine
+- [x] Data was analysed for errors and inconsistencies
+- [x] Necessary transformations were applied to facilitate RDF generation
+- [x] No duplicate or conflicting rows were found
+- [x] A normalized FECHA column was created from ANO, MES and DIA
+- [x] Hourly measurement columns (H01-V01 ... H24-V24) were transposed into rows
+- [x] HORA, VALOR_MEDICION and ES_VALIDA were generated to obtain one row per hourly observation
+- [x] Invalid measurements were identified using VALIDEZ; their placeholder value 0 was replaced by an empty value
+- [x] VALOR_MEDICION was converted to numeric values
+- [x] A unique ID_OBSERVACION was generated for every hourly observation
+- [x] ESTACION codes were normalized into COD_ESTACION with three digits
+- [x] PUNTO_MUESTREO and MAGNITUD were checked for consistency and preserved
