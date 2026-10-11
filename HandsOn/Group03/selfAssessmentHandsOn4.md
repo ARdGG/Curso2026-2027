@@ -34,4 +34,4 @@
 - [X] We used the {streetName, streetType} columns from both datasets to  match
 
 ## Comments on the self-assessment
-_(If required)_
+Note: We tried to transform our RML document to YARRRML, but couldn't execute it with Morph; it seems 2 join conditions are not supported.
