@@ -212,13 +212,10 @@ g.bind("foaf", foaf)
 
 #TODO
 
-vcard_rdf = Namespace("http://www.w3.org/2001/vcard-rdf/3.0/")
-g.bind("vcard-rdf", vcard_rdf)
 
-
-g.add((person.Juan, foaf.email, Literal("juan.cano@upm.es", datatype=XSD.string)))
-g.add((person.Juan, vcard_rdf.Given, Literal("Juan", datatype=XSD.string)))
-g.add((person.Juan, vcard_rdf.Family, Literal("Cano de Benito", datatype=XSD.string)))
+g.add((person.Juan, foaf.givenName, Literal("Juan", datatype=XSD.string)))
+g.add((person.Juan, foaf.familyName, Literal("Cano de Benito", datatype=XSD.string)))
+g.add((person.Juan, foaf.mbox, Literal("juan.cano@upm.es", datatype=XSD.string)))
 
 
 # Visualize the results
