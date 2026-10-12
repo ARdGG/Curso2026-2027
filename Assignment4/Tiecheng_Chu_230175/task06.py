@@ -54,10 +54,6 @@ g.bind("person", person)
 ontology = Namespace("http://oeg.fi.upm.es/def/people#")
 g.bind("ontology", ontology)
 
-university = Namespace("http://oeg.fi.upm.es/resource/university/")
-g.bind("university", university)
-
-
 organization = Namespace("http://oeg.fi.upm.es/resource/organization/")
 g.bind("organization", organization)
 
