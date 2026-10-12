@@ -34,4 +34,4 @@ En esta tercera entrega de la práctica nuestro objetivo era limpiar y preparar 
 - ACCESIBILIDAD puede contener varios códigos separados por comas ("1,5,6"). Se mantiene así y se separará en el mapping RDF.
 
 ## Conclusión
-Todos los cambios realizados han sido guardados en un nuevo csv: csv/200186-0-polideportivos-updated.csv; y las operaciones han sido almacenadas en un documento JSON: openrefine/polideportivos-operations.json. Aplicando ese JSON al CSV original (importado con la codificación y el separador indicados) se obtiene exactamente el CSV entregado. El dataset queda limpio y preparado para la generación de RDF, salvo los problemas conocidos indicados arriba.
+Todos los cambios realizados han sido guardados en un nuevo csv: csv/200186-0-polideportivos-updated.csv; y las operaciones han sido almacenadas en un documento JSON: openrefine/history.json. Aplicando ese JSON al CSV original (importado con la codificación y el separador indicados) se obtiene exactamente el CSV entregado. El dataset queda limpio y preparado para la generación de RDF, salvo los problemas conocidos indicados arriba.
