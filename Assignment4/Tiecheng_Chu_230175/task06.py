@@ -57,6 +57,8 @@ g.bind("ontology", ontology)
 organization = Namespace("http://oeg.fi.upm.es/resource/organization/")
 g.bind("organization", organization)
 
+university = Namespace("http://oeg.fi.upm.es/resource/university/")
+g.bind("university", university)
 
 # %% [markdown]
 # ### **Task 6.1**
