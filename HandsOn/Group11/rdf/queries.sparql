@@ -1,0 +1,45 @@
+PREFIX bici: <http://www.example.org/bicimad/ontology/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema: <https://schema.org/>
+PREFIX wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#>
+
+# Q1. Total de estaciones (debe coincidir con las filas del CSV)
+SELECT (COUNT(?s) AS ?total)
+WHERE { ?s a bici:Station . }
+
+# Q2. Numero de estaciones por estado
+SELECT ?estado (COUNT(?s) AS ?n)
+WHERE {
+  ?s bici:hasStatus ?e .
+  ?e rdfs:label ?estado .
+}
+GROUP BY ?estado
+ORDER BY DESC(?n)
+
+# Q3. Estaciones con mas de 30 bases
+SELECT ?nombre ?bases
+WHERE {
+  ?s rdfs:label ?nombre ;
+     bici:totalBases ?bases .
+  FILTER(?bases > 30)
+}
+ORDER BY DESC(?bases)
+
+# Q4. Estaciones que NO estan en servicio
+SELECT ?nombre ?estado
+WHERE {
+  ?s rdfs:label ?nombre ;
+     bici:hasStatus ?e .
+  ?e rdfs:label ?estado .
+  FILTER(?estado != "IN_SERVICE")
+}
+
+# Q5. Estaciones de la calle Serrano con sus coordenadas
+SELECT ?nombre ?direccion ?lat ?long
+WHERE {
+  ?s rdfs:label ?nombre ;
+     bici:address ?direccion ;
+     bici:latitude ?lat ;
+     bici:longitude ?long .
+  FILTER(CONTAINS(?direccion, "Serrano"))
+}
