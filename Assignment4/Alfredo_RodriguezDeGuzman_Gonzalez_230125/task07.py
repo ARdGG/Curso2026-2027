@@ -1,7 +1,7 @@
 #%% md
 # **Task 07: Querying RDF(s)**
 #%%
-from notebooks.Task06_mandatory import ontology
+
 #!pip install rdflib
 #!pip install oeg-sw-class
 github_storage = "https://raw.githubusercontent.com/FacultadInformatica-LinkedData/Curso2026-2027/master/Assignment4/course_materials"
