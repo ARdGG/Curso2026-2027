@@ -135,7 +135,7 @@ r.validate_task_06_02(g)
 g.add((ontology.hasName, RDF.type, RDF.Property))
 g.add((ontology.hasName, RDFS.label, Literal("hasName", datatype=XSD.string)))
 g.add((ontology.hasName, RDFS.domain, ontology.Person))
-g.add((ontology.hasName, RDFS.range, XSD.string))
+g.add((ontology.hasName, RDFS.range, RDFS.Literal))
 
 g.add((ontology.hasColleague, RDF.type, RDF.Property))
 g.add((ontology.hasColleague, RDFS.label, Literal("hasColleague", datatype=XSD.string)))
@@ -145,7 +145,7 @@ g.add((ontology.hasColleague, RDFS.range, ontology.Person))
 g.add((ontology.hasHomePage, RDF.type, RDF.Property))
 g.add((ontology.hasHomePage, RDFS.label, Literal("hasHomePage", datatype=XSD.string)))
 g.add((ontology.hasHomePage, RDFS.domain, ontology.FullProfessor))
-g.add((ontology.hasHomePage, RDFS.range, XSD.string))
+g.add((ontology.hasHomePage, RDFS.range, RDFS.Literal))
 
 g.add((ontology.affiliatedWith, RDF.type, RDF.Property))
 g.add((ontology.affiliatedWith, RDFS.label, Literal("affiliatedWith", datatype=XSD.string)))
@@ -179,6 +179,9 @@ g.add((person.Sven, ontology.affiliatedWith, university.Mannheim))
 g.add((person.Raul, ontology.hasHomePage, Literal("http://oeg.fi.upm.es", datatype=XSD.string)))
 g.add((person.Juan, ontology.hasName, Literal("Juan Cano de Benito", datatype=XSD.string)))
 
+g.add((person.Raul, RDFS.label, Literal("Raúl", datatype=XSD.string)))
+g.add((person.Juan, RDFS.label, Literal("Juan", datatype=XSD.string)))
+g.add((person.Sven, RDFS.label, Literal("Sven", datatype=XSD.string)))
 # Visualize the results
 for s, p, o in g:
   print(s,p,o)
@@ -200,9 +203,9 @@ foaf = Namespace("http://xmlns.com/foaf/0.1/")
 g.bind("foaf", foaf)
 
 #TODO
-g.add((person.Juan, foaf.email, Literal("juan.cano@upm.es", datatype=XSD.string)))
+g.add((person.Juan, foaf.mbox, Literal("juan.cano@upm.es", datatype=XSD.string)))
 g.add((person.Juan, foaf.givenName, Literal("Juan", datatype=XSD.string)))
-g.add((person.Juan, foaf.familyName, Literal("Cano", datatype=XSD.string)))
+g.add((person.Juan, foaf.familyName, Literal("Cano de Benito", datatype=XSD.string)))
 
 # Visualize the results
 for s, p, o in g:
