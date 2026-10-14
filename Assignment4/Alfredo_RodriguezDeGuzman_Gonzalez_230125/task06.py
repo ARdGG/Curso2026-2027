@@ -1,8 +1,8 @@
 #%% md
 # # **Task 06: Modifying RDF(s)**
 #%%
-!pip install rdflib
-!pip install oeg-sw-class
+#!pip install rdflib
+#!pip install oeg-sw-class
 #%% md
 # Spanish: Importar la librería RDFLib
 # 
