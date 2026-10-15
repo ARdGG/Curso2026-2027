@@ -123,17 +123,17 @@ English: Add the properties shown in the previous diagram. Add labels for each o
 
 """
 
-g.add((ontology.hasName, RDF.type, RDFS.Property))
+g.add((ontology.hasName, RDF.type, RDF.Property))
 g.add((ontology.hasName, RDFS.label, Literal("hasName", datatype=XSD.string)))
 g.add((ontology.hasName, RDFS.domain, ontology.Person))
 g.add((ontology.hasName, RDFS.range, RDFS.Literal))
 
-g.add((ontology.hasColleague, RDF.type, RDFS.Property))
+g.add((ontology.hasColleague, RDF.type, RDF.Property))
 g.add((ontology.hasColleague, RDFS.label, Literal("hasColleague", datatype=XSD.string)))
 g.add((ontology.hasColleague, RDFS.domain, ontology.Person))
 g.add((ontology.hasColleague, RDFS.range, ontology.Person))
 
-g.add(ontology.hasHomePage, RDF.type, RDFS.Property)
+g.add(ontology.hasHomePage, RDF.type, RDF.Property)
 g.add((ontology.hasHomePage, RDFS.label, Literal("hasHomePage", datatype=XSD.string)))
 g.add((ontology.hasHomePage, RDFS.domain, ontology.Person))
 g.add((ontology.hasHomePage, RDFS.range, RDFS.Literal))
