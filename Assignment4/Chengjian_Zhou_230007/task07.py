@@ -60,12 +60,14 @@ English: Repeat the same exercise in SPARQL, returning the variables ?c (class) 
 """
 
 #TODO
-query = """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+query = """
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?c ?sc WHERE {
-  ?c a rdfs:Class .
-  OPTIONAL { ?c rdfs:subClassOf ?sc }
-}"""
+    ?c rdf:type rdfs:Class .
+    OPTIONAL { ?c rdfs:subClassOf ?sc . }
+}
+"""
 
 for r in g.query(query):
   print(r.c, r.sc)
@@ -114,11 +116,12 @@ English: Repeat the same exercise in SPARQL, returning the individual URIs in a 
 
 #TODO
 
-query = """PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+query = """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ns: <http://oeg.fi.upm.es/def/people#>
 SELECT DISTINCT ?ind WHERE {
-  ?ind rdf:type/rdfs:subClassOf* ns:Person .
+    ?c rdfs:subClassOf* ns:Person .
+    ?ind rdf:type ?c .
 }"""
 
 for r in g.query(query):
@@ -166,11 +169,12 @@ English: List the name of those entities who have a colleague with a dog, or tha
 
 query = """PREFIX ns: <http://oeg.fi.upm.es/def/people#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 SELECT DISTINCT ?name WHERE {
-  ?x ns:hasColleague+ ?y .
-  ?y ns:ownsPet ?pet .
   ?x rdfs:label ?name .
-  FILTER EXISTS { ?x ns:hasColleague ?z }
+  { ?x ns:hasColleague ?y . ?y ns:ownsPet ?pet . ?pet rdf:type ns:Dog . }
+  UNION
+  { ?x ns:hasColleague ?y . ?y ns:hasColleague ?z . ?z ns:ownsPet ?pet . ?pet rdf:type ns:Dog . }
 }"""
 
 for r in g.query(query):
