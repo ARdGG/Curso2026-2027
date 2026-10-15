@@ -26,9 +26,9 @@
     prop:hasMeasurementType <https://group10.org/air-quality-2026/resources/measurement-types/magnitude-81> ;
     prop:hasTechnique "89"^^xsd:integer .
 
-<https://group10.org/air-quality-2026/resources/observations/28102001-81-20260101-h01>
+<https://group10.org/air-quality-2026/resources/observations/28102001_81_89-2026-1-1-h01>
     a cls:Observation ;
-    rdfs:label "Hourly observation for 2026-01-01, hour 01"@en ;
+    rdfs:label "Observation 28102001_81_89 on 2026-1-1 at hour 1"@en ;
     prop:hasSamplePoint <https://group10.org/air-quality-2026/resources/sample-points/28102001_81_89> ;
     prop:hasYear "2026"^^xsd:integer ;
     prop:hasMonth "1"^^xsd:integer ;
