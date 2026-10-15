@@ -2,32 +2,30 @@
 
 ## Checklist
 
-**The "mappings" directory:**
+**Every RDF file:**
 
-- [ ] Contains an RML file with the mappings (`airquality.rml`)
-- [ ] Contains a YARRRML file with the mapping rules (`airquality.yml`) (optional)
+- [ ] Uses the .nt extension
+- [ ] Is serialized in the NTriples format
+- [ ] Follows the resource naming strategy
+- [ ] Uses class and property URIs that are the same as those used in the ontology
 
-**The RML mappings:**
+**Every URI in the RDF files:**
 
-- [ ] Are serialized in the Turtle syntax
-- [ ] Use the updated CSV files from the "csv" directory as logical sources
-- [ ] Follow the resource naming strategy defined in "analysis.html"
-- [ ] Use the classes and properties of the ontology in "ontology/airquality.ttl"
-- [ ] Define a triples map for every class of the ontology (Station, StationType, Municipality, Pollutant, Observation)
-- [ ] Assign the correct datatypes to literals (xsd:string, xsd:integer, xsd:float, xsd:dateTime, xsd:boolean)
-- [ ] Link resources between triples maps (e.g., Observation → Station, Station → StationType)
+- [ ] Is "readable" and has some meaning (e.g., it is not an auto-increased integer) 
+- [ ] Is not encoded as a string
+- [ ] Does not contain a double slash (i.e., “//”)
 
-**The "rdf" directory:**
+**Every individual in the RDF files:**
 
-- [ ] Contains an RDF file in the Turtle syntax with the transformed data (`airquality.ttl`)
-- [ ] Contains a SPARQL file with queries to verify the data (`queries.sparql`)
+- [ ] Has a label with the name of the individual
+- [ ] Has a type
 
-**The RDF data:**
+**Every value in the RDF files:**
 
-- [ ] Was generated with an RML processor (RMLMapper / morph-kgc)
-- [ ] Contains the data of the station metadata dataset
-- [ ] Contains the data of the air quality measurements dataset
-- [ ] The SPARQL queries return the expected results
+- [ ] Is trimmed
+- [ ] Is properly encoded (e.g., dates, booleans)
+- [ ] Includes its datatype
+- [ ] Uses the correct datatype (e.g., values of 0-1 may be booleans and not integers, not every string made of numbers is a number)
 
 ## Comments on the self-assessment
 _(If required)_
