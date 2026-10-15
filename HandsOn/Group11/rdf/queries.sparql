@@ -1,45 +1,56 @@
 PREFIX bici: <http://www.example.org/bicimad/ontology/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX schema: <https://schema.org/>
-PREFIX wgs: <https://www.w3.org/2003/01/geo/wgs84_pos#>
 
-# Q1. Total de estaciones (debe coincidir con las filas del CSV)
+# Q1. Total number of stations
 SELECT (COUNT(?s) AS ?total)
-WHERE { ?s a bici:Station . }
-
-# Q2. Numero de estaciones por estado
-SELECT ?estado (COUNT(?s) AS ?n)
 WHERE {
-  ?s bici:hasStatus ?e .
-  ?e rdfs:label ?estado .
+  ?s a bici:Station .
 }
-GROUP BY ?estado
+
+# Q2. Number of stations by status
+SELECT ?status (COUNT(?s) AS ?n)
+WHERE {
+  ?s a bici:Station ;
+     bici:hasStatus ?statusResource .
+
+  ?statusResource rdfs:label ?status .
+}
+GROUP BY ?status
 ORDER BY DESC(?n)
 
-# Q3. Estaciones con mas de 30 bases
-SELECT ?nombre ?bases
+# Q3. Stations with more than 30 docking bases
+SELECT ?name ?bases
 WHERE {
-  ?s rdfs:label ?nombre ;
+  ?s a bici:Station ;
+     rdfs:label ?name ;
      bici:totalBases ?bases .
+
   FILTER(?bases > 30)
 }
 ORDER BY DESC(?bases)
 
-# Q4. Estaciones que NO estan en servicio
-SELECT ?nombre ?estado
+# Q4. Stations that are not in service
+SELECT ?name ?status
 WHERE {
-  ?s rdfs:label ?nombre ;
-     bici:hasStatus ?e .
-  ?e rdfs:label ?estado .
-  FILTER(?estado != "IN_SERVICE")
+  ?s a bici:Station ;
+     rdfs:label ?name ;
+     bici:hasStatus ?statusResource .
+
+  ?statusResource rdfs:label ?status .
+
+  FILTER(?status != "IN_SERVICE")
 }
 
-# Q5. Estaciones de la calle Serrano con sus coordenadas
-SELECT ?nombre ?direccion ?lat ?long
+# Q5. Stations on Serrano street with their coordinates
+SELECT ?name ?address ?latitude ?longitude
 WHERE {
-  ?s rdfs:label ?nombre ;
-     bici:address ?direccion ;
-     bici:latitude ?lat ;
-     bici:longitude ?long .
-  FILTER(CONTAINS(?direccion, "Serrano"))
+  ?s a bici:Station ;
+     rdfs:label ?name ;
+     bici:hasLocation ?location .
+
+  ?location bici:address ?address ;
+            bici:latitude ?latitude ;
+            bici:longitude ?longitude .
+
+  FILTER(CONTAINS(?address, "Serrano"))
 }
