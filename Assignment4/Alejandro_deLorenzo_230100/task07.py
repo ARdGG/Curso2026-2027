@@ -35,13 +35,10 @@ English: For all classes, list each classURI. If the class belogs to another cla
 """
 
 result = []
-for c in sorted(classes, key=str):
-    supers = list(g.objects(c, RDFS.subClassOf))
-    if supers:
-        for s in supers:
-            result.append((c, s))
-    else:
-        result.append((c, None))
+
+for c in g.subjects(RDF.type, RDFS.Class):
+    sc = g.value(c, RDFS.subClassOf)
+    result.append((c, sc if sc else None))
 
 # Visualize the results
 for r in result:
