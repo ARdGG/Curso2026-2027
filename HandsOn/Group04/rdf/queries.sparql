@@ -73,7 +73,7 @@ WHERE {
 GROUP BY ?typeName
 ORDER BY DESC(?avgNO2)
 
-# Q7. Station and hour with the highest valid value for each pollutant
+# Q7. Station and hour with the highest valid value for each pollutant (ties return one row per hour)
 SELECT ?pollutantName ?stationName ?dateTime ?value
 WHERE {
   {
@@ -112,12 +112,18 @@ WHERE {
 }
 ORDER BY ?stationName
 
-# Q10. Sanity check: observations of a pollutant that the station is not declared to measure (expected: false)
+# Q10. Sanity check: observations linked to a station or pollutant that does not exist (expected: false)
 ASK {
-  ?obs a bm:Observation ;
-       bm:observedAt ?station ;
-       bm:observesPollutant ?p .
-  FILTER NOT EXISTS { ?station bm:measuresPollutant ?p }
+  ?obs a bm:Observation .
+  {
+    ?obs bm:observedAt ?station .
+    FILTER NOT EXISTS { ?station a bm:Station }
+  }
+  UNION
+  {
+    ?obs bm:observesPollutant ?p .
+    FILTER NOT EXISTS { ?p a bm:Pollutant }
+  }
 }
 
 # Q11. Sanity check: invalid observations that still carry a value (expected: false)
@@ -132,4 +138,11 @@ WHERE {
   { ?s ?p ?o . FILTER NOT EXISTS { ?s rdfs:label ?l } }
   UNION
   { ?s ?p ?o . FILTER NOT EXISTS { ?s a ?t } }
+}
+
+# Q13. Sanity check: observation dates (expected: 3024 xsd:dateTime values, from 2026-10-01T01:00:00 to 2026-10-02T00:00:00)
+SELECT (COUNT(?dt) AS ?total) (SUM(IF(DATATYPE(?dt) = xsd:dateTime, 1, 0)) AS ?typedAsDateTime) (MIN(?dt) AS ?first) (MAX(?dt) AS ?last)
+WHERE {
+  ?obs a bm:Observation ;
+       bm:dateTime ?dt .
 }

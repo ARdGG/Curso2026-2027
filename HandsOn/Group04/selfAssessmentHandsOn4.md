@@ -1,42 +1,65 @@
-# Hands-on assignment 4 - Self assessment
+# Hands-on assignment 4 – Self assessment
 
 ## Checklist
 
+**Every RDF file:**
+
+- [x] Uses the .nt extension
+- [x] Is serialized in the NTriples format
+- [x] Follows the resource naming strategy
+- [x] Uses class and property URIs that are the same as those used in the ontology
+
+**Every URI in the RDF files:**
+
+- [x] Is "readable" and has some meaning (e.g., it is not an auto-increased integer) 
+- [x] Is not encoded as a string
+- [x] Does not contain a double slash (i.e., “//”)
+
+**Every individual in the RDF files:**
+
+- [x] Has a label with the name of the individual
+- [x] Has a type
+
+**Every value in the RDF files:**
+
+- [x] Is trimmed
+- [x] Is properly encoded (e.g., dates, booleans)
+- [x] Includes its datatype
+- [x] Uses the correct datatype (e.g., values of 0-1 may be booleans and not integers, not every string made of numbers is a number)
+
+## Additional checks
+
 **The "mappings" directory:**
 
-- [x] Contains an RML file (`airquality.rml`) with the mappings for selected CSV dataset to RDF.
-- [ ] Contains an optional YML file (`airquality.yml`) describing the mapping rules.
+- [x] Contains an RML file (`airquality.rml`) with the mappings for the selected CSV datasets to RDF.
 
 **The "rdf" directory:**
 
-- [x] Contains a RDF file in the Turtle syntax (`airquality.ttl`) with the transformed data.
-- [x] Contains a RDF file in the N-Triples syntax (`airquality.nt`) with the transformed data.
+- [x] Contains an RDF file in the Turtle syntax (`airquality.ttl`) with the transformed data.
+- [x] Contains an RDF file in the N-Triples syntax (`airquality.nt`) with the transformed data.
 - [x] Contains a SPARQL file (`queries.sparql`) with queries to verify the transformed data.
 
-
-**Every RDF file:**
-- [x] Follows the resource naming strategy.
-- [x] Uses class and property URIs that are the same as those used in the BreatheMadrid ontology.
-- [x] Uses readable URIs with meaningful identifiers.
-- [x] Uses URIs as RDF resources rather than literal strings.
-- [x] Avoid malformed URIs.
-- [x] Includes an `rdfs:label` and an `rdf:type`for each individual.
-- [x] Uses properly formatted literal values without unnecessary leading or trailing spaces.
-
-**The RML Mapping:**
+**The RML mapping:**
 
 - [x] Maps station metadata, including station codes, names, addresses, coordinates, altitude and station types.
-- [x] Link station data to Wikidata using owl:sameAs, where applicable.
-- [x] Maps hourly air quality observations and link them to stations via `bm:observedAt`, and to pollutants via `bm:observesPollutant`.
-- [x] Link stations to monitored pollutants via `bm:measuresPollutant`.
+- [x] Links the municipality to Wikidata using `owl:sameAs`.
+- [x] Maps hourly air quality observations and links them to stations via `bm:observedAt`, and to pollutants via `bm:observesPollutant`.
+- [x] Links stations to monitored pollutants via `bm:measuresPollutant`.
 - [x] Maps pollutant metadata from `csv/contaminantes.csv`.
-- [x] Handles invalid measurements by omitting `bm:value` when VALOR_MEDICION is empty.
+- [x] Handles invalid measurements by omitting `bm:value` when `VALOR_MEDICION` is empty.
 
-
-**Data Verification:**
+**Data verification:**
 
 - [x] Includes SPARQL queries to check the number of stations and observations.
 - [x] Includes queries to verify the presence of mandatory properties and the expected literal datatypes.
 - [x] Includes queries to verify the links between observations, monitoring stations and pollutants.
 - [x] Runs the SPARQL queries against the generated RDF and reviews the results.
 
+## Comments on the self-assessment
+
+- **RDF files.** The assignment asks for a Turtle file and this checklist asks for N-Triples, so both are delivered: `rdf/airquality.ttl` and `rdf/airquality.nt` contain exactly the same 20,785 triples. Both were generated with RMLMapper v8.1.0 from `mappings/airquality.rml`, running from the `HandsOn/Group04` directory (`-s turtle` and `-s ntriples`).
+- **Readable URIs.** Some URIs contain numbers (e.g., `resource/station/28079004`, `resource/pollutant/8`). These are the official station and pollutant (magnitude) codes used by the Madrid City Council, not auto-increased integers. All URI patterns follow the resource naming strategy defined in `analysis.html`.
+- **String datatypes.** Every literal has its datatype declared in the mapping (`rr:datatype`). Text literals appear without an explicit `^^xsd:string` in the output because, in RDF 1.1, a literal without a datatype is an `xsd:string`, and RMLMapper omits it.
+- **Invalid observations.** The 821 observations marked as not valid (`VALIDEZ = N`) have `bm:isValid false` and no `bm:value`: the original `0` was only a placeholder, so it was removed during data cleaning (Hands-on 3). Query Q11 checks this.
+- **Auxiliary data.** `csv/contaminantes.csv` contains the names and units of the 11 pollutant codes in the dataset, taken from the official data interpretation document of the Madrid air quality dataset. The hour `24` of the source data was converted into `00:00` of the following day (`FECHA_HORA` column) so that it is a valid `xsd:dateTime`.
+- **YARRRML.** The optional YARRRML file was not delivered; the mappings are only provided in RML.
