@@ -133,7 +133,7 @@ g.add((ontology.hasColleague, RDFS.label, Literal("hasColleague", datatype=XSD.s
 g.add((ontology.hasColleague, RDFS.domain, ontology.Person))
 g.add((ontology.hasColleague, RDFS.range, ontology.Person))
 
-g.add(ontology.hasHomePage, RDF.type, RDF.Property)
+g.add((ontology.hasHomePage, RDF.type, RDF.Property))
 g.add((ontology.hasHomePage, RDFS.label, Literal("hasHomePage", datatype=XSD.string)))
 g.add((ontology.hasHomePage, RDFS.domain, ontology.Person))
 g.add((ontology.hasHomePage, RDFS.range, RDFS.Literal))
