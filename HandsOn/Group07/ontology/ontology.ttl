@@ -160,13 +160,6 @@ ue:streetNumber rdf:type owl:DatatypeProperty ;
                 rdfs:label "street number"@en .
 
 
-###  http://www.madridurbanenvironment.org/ontology/webPage
-ue:webPage rdf:type owl:DatatypeProperty ;
-           rdfs:domain ue:Park ;
-           rdfs:range xsd:anyURI ;
-           rdfs:label "web page"@en .
-
-
 #################################################################
 #    Classes
 #################################################################
