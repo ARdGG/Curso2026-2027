@@ -1,0 +1,4 @@
+PREFIX bm: <http://breathemadrid.es/ontology#>
+PREFIX bmr: <http://breathemadrid.es/resource/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
