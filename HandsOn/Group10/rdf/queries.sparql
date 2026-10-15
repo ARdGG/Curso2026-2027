@@ -2,52 +2,58 @@ PREFIX cls:  <https://group10.org/air-quality-2026/ontology/classes/>
 PREFIX prop: <https://group10.org/air-quality-2026/ontology/properties/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-# Q1. Number of individuals of each class
-SELECT ?class (COUNT(?s) AS ?individuals)
-WHERE { ?s a ?class . }
-GROUP BY ?class
-ORDER BY ?class
 
-# Q2. Every station with the municipality where it is located
+# Q1. Every station with the municipality where it is located
+
 SELECT ?station ?stationLabel ?municipalityCode
 WHERE {
-  ?station a cls:Station ;
-           rdfs:label ?stationLabel ;
-           prop:locatedIn ?municipality .
+  ?station a cls:Station;
+  rdfs:label ?stationLabel;
+  prop:locatedIn ?municipality .
   ?municipality prop:hasMunicipalityCode ?municipalityCode .
 }
 ORDER BY ?municipalityCode
 
-# Q3. Hourly values of measurement type 83 at station 28102001 on 1 January 2026
+
+# Q2. Hourly values of measurement type 83 at station 28102001 on 1 January 2026
+
 SELECT ?hour ?value
 WHERE {
-  ?obs a cls:Observation ;
-       prop:hasSamplePoint ?sp ;
-       prop:hasMonth 1 ;
-       prop:hasDay 1 ;
-       prop:hasHour ?hour ;
-       prop:hasValue ?value .
-  ?sp prop:hasStation ?station ;
-      prop:hasMeasurementType ?type .
-  ?station prop:hasStationCode 1 ;
-           prop:locatedIn/prop:hasMunicipalityCode "28102" .
+  ?obs a cls:Observation;
+  prop:hasSamplePoint ?sp;
+  prop:hasMonth 1;
+  prop:hasDay 1;
+  prop:hasHour ?hour;
+  prop:hasValue ?value .
+  ?sp prop:hasStation ?station;
+  prop:hasMeasurementType ?type .
+  ?station prop:hasStationCode 1;
+  prop:locatedIn ?municipality .
+  ?municipality prop:hasMunicipalityCode "28102" .
   ?type prop:hasMeasurementCode 83 .
 }
 ORDER BY ?hour
 
-# Q4. Average, minimum and maximum value per measurement type and month
+
+# Q3. Average, minimum and maximum value per measurement type and month
+
 SELECT ?measurementCode ?month (AVG(?value) AS ?avg) (MIN(?value) AS ?min) (MAX(?value) AS ?max)
 WHERE {
-  ?obs prop:hasSamplePoint/prop:hasMeasurementType/prop:hasMeasurementCode ?measurementCode ;
-       prop:hasMonth ?month ;
-       prop:hasValue ?value .
+  ?obs prop:hasSamplePoint ?sp;
+  prop:hasMonth ?month;
+  prop:hasValue ?value .
+  ?sp prop:hasMeasurementType ?type .
+  ?type prop:hasMeasurementCode ?measurementCode .
 }
 GROUP BY ?measurementCode ?month
 ORDER BY ?measurementCode ?month
 
-# Q5. Check: observations without value or without sample point (should return 0)
-SELECT (COUNT(?obs) AS ?incomplete)
+
+# Q4. Check that every observation has a value and a sample point (the three numbers must be equal)
+
+SELECT (COUNT(?obs) AS ?observations) (COUNT(?value) AS ?withValue) (COUNT(?sp) AS ?withSamplePoint)
 WHERE {
   ?obs a cls:Observation .
-  FILTER (NOT EXISTS { ?obs prop:hasValue ?v } || NOT EXISTS { ?obs prop:hasSamplePoint ?sp })
+  OPTIONAL { ?obs prop:hasValue ?value }
+  OPTIONAL { ?obs prop:hasSamplePoint ?sp }
 }

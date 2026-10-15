@@ -7,148 +7,143 @@
 @prefix prop: <https://group10.org/air-quality-2026/ontology/properties/> .
 @base <https://group10.org/air-quality-2026/mappings/> .
 
-#################################################################
-# Municipality
-#################################################################
+
+#Municipality
 
 <#Municipality> a rr:TriplesMap ;
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/municipalities/municipality-{cod_municipio}" ;
     rr:class cls:Municipality
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Municipality {cod_municipio}" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMunicipalityCode ;
     rr:objectMap [ rml:reference "cod_municipio" ; rr:datatype xsd:string ]
   ] .
 
-#################################################################
-# Station
-#################################################################
+
+#Station
 
 <#Station> a rr:TriplesMap ;
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/stations/station-{cod_estacion}" ;
     rr:class cls:Station
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Monitoring station {cod_estacion}" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasStationCode ;
     rr:objectMap [ rml:reference "estacion" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:locatedIn ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/municipalities/municipality-{cod_municipio}" ; rr:termType rr:IRI ]
   ] .
 
-#################################################################
-# MeasurementType
-#################################################################
+
+#MeasurementType
 
 <#MeasurementType> a rr:TriplesMap ;
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/measurement-types/magnitude-{magnitud}" ;
     rr:class cls:MeasurementType
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Measurement type {magnitud}" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMeasurementCode ;
     rr:objectMap [ rml:reference "magnitud" ; rr:datatype xsd:integer ]
   ] .
 
-#################################################################
+
 # SamplePoint
-#################################################################
 
 <#SamplePoint> a rr:TriplesMap ;
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ;
     rr:class cls:SamplePoint
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Sampling point {punto_muestreo}" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasStation ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/stations/station-{cod_estacion}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMeasurementType ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/measurement-types/magnitude-{magnitud}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasTechnique ;
     rr:objectMap [ rr:constant "89" ; rr:datatype xsd:integer ]
   ] .
 
-#################################################################
-# Observations: one TriplesMap per hourly column (h01 ... h24)
-#################################################################
+
+#Observations: one TriplesMap per hourly column (h01 ... h24)
 
 # Hour 01
 <#Observation_h01> a rr:TriplesMap ;
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h01" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 1" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "1" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h01" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -159,39 +154,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h02" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 2" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "2" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h02" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -202,39 +197,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h03" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 3" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "3" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h03" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -245,39 +240,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h04" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 4" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "4" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h04" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -288,39 +283,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h05" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 5" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "5" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h05" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -331,39 +326,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h06" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 6" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "6" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h06" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -374,39 +369,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h07" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 7" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "7" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h07" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -417,39 +412,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h08" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 8" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "8" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h08" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -460,39 +455,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h09" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 9" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "9" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h09" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -503,39 +498,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h10" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 10" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "10" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h10" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -546,39 +541,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h11" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 11" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "11" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h11" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -589,39 +584,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h12" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 12" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "12" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h12" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -632,39 +627,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h13" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 13" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "13" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h13" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -675,39 +670,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h14" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 14" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "14" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h14" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -718,39 +713,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h15" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 15" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "15" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h15" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -761,39 +756,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h16" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 16" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "16" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h16" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -804,39 +799,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h17" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 17" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "17" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h17" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -847,39 +842,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h18" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 18" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "18" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h18" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -890,39 +885,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h19" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 19" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "19" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h19" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -933,39 +928,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h20" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 20" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "20" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h20" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -976,39 +971,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h21" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 21" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "21" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h21" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -1019,39 +1014,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h22" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 22" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "22" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h22" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -1062,39 +1057,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h23" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 23" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "23" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h23" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
@@ -1105,39 +1100,39 @@
   rml:logicalSource [
     rml:source "csv/2026-updated.csv" ;
     rml:referenceFormulation ql:CSV
-  ] ;
+  ];
   rr:subjectMap [
     rr:template "https://group10.org/air-quality-2026/resources/observations/{punto_muestreo}-{ano}-{mes}-{dia}-h24" ;
     rr:class cls:Observation
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate rdfs:label ;
     rr:objectMap [ rr:template "Observation {punto_muestreo} on {ano}-{mes}-{dia} at hour 24" ; rr:termType rr:Literal ; rr:language "en" ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasSamplePoint ;
     rr:objectMap [ rr:template "https://group10.org/air-quality-2026/resources/sample-points/{punto_muestreo}" ; rr:termType rr:IRI ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasYear ;
     rr:objectMap [ rml:reference "ano" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasMonth ;
     rr:objectMap [ rml:reference "mes" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasDay ;
     rr:objectMap [ rml:reference "dia" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasHour ;
     rr:objectMap [ rr:constant "24" ; rr:datatype xsd:integer ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:hasValue ;
     rr:objectMap [ rml:reference "h24" ; rr:datatype xsd:decimal ]
-  ] ;
+  ];
   rr:predicateObjectMap [
     rr:predicate prop:isValidated ;
     rr:objectMap [ rr:constant "true" ; rr:datatype xsd:boolean ]
