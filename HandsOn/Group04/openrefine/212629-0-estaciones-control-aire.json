@@ -194,5 +194,11 @@
     "repeat": false,
     "repeatCount": 10,
     "description": "Transforma el texto de las celdas en la columna DIRECCION usando la expresión grel:value.replace(/\\.$/, \"\")"
+  },
+  {
+    "op": "core/column-rename",
+    "oldColumnName": "Fecha alta",
+    "newColumnName": "FECHA_ALTA",
+    "description": "Renombra la columna Fecha alta a FECHA_ALTA"
   }
 ]

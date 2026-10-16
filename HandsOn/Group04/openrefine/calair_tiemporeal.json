@@ -164,5 +164,18 @@
     "newColumnName": "COD_ESTACION",
     "columnInsertIndex": 3,
     "description": "Crear la columna COD_ESTACION en el índice 3 basada en la columna ESTACION usando la expresión grel:if(value.toNumber() < 10,\"00\" + value.toString(),if(value.toNumber() < 100, \"0\" + value.toString(), value.toString()))"
+  },
+  {
+    "op": "core/column-addition",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "baseColumnName": "HORA",
+    "expression": "grel:if(value == \"24\",\n   inc(toDate(cells[\"FECHA\"].value, \"yyyy-MM-dd\"), 1, \"days\").toString(\"yyyy-MM-dd\") + \"T00:00:00\",\n   cells[\"FECHA\"].value + \"T\" + value + \":00:00\")",
+    "onError": "set-to-blank",
+    "newColumnName": "FECHA_HORA",
+    "columnInsertIndex": 11,
+    "description": "Crear la columna FECHA_HORA en el índice 11 basada en la columna HORA usando la expresión grel:if(value == \"24\",\n   inc(toDate(cells[\"FECHA\"].value, \"yyyy-MM-dd\"), 1, \"days\").toString(\"yyyy-MM-dd\") + \"T00:00:00\",\n   cells[\"FECHA\"].value + \"T\" + value + \":00:00\")"
   }
 ]
