@@ -52,7 +52,12 @@ English: Create new prefixes for "ontology", "organization" and "person", with t
 
 # this task is validated in the next step
 organization = Namespace("http://oeg.fi.upm.es/resource/organization/")
+person = Namespace("http://oeg.fi.upm.es/resource/person/")
+ontology = Namespace("http://oeg.fi.upm.es/def/people#")
+
 g.bind("organization", organization)
+g.bind("person", person)
+g.bind("ontology", ontology)
 
 """### **Task 6.1**
 
@@ -167,6 +172,7 @@ Spanish: Crea los individuos que aparecen en el diagrama, en la sección «Datos
 English: Create the individuals shown in the diagram under "Datos". Link them with the same relationships shown in the diagram."
 """
 
+person = Namespace("http://oeg.fi.upm.es/resource/person/")
 university = Namespace("http://oeg.fi.upm.es/resource/university/")
 g.bind("university", university)
 
