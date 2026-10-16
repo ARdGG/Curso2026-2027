@@ -132,7 +132,7 @@ English: Add the properties shown in the previous diagram. Add labels for each o
 g.add((ontology.hasName, RDF.type, RDF.Property))
 g.add((ontology.hasName, RDFS.label, Literal("hasName", datatype=XSD.string)))
 g.add((ontology.hasName, RDFS.domain, ontology.Person))
-g.add((ontology.hasName, RDFS.range, XSD.string))
+g.add((ontology.hasName, RDFS.range, RDFS.Literal))
 
 # Propiedad: hasColleague
 g.add((ontology.hasColleague, RDF.type, RDF.Property))
@@ -144,9 +144,9 @@ g.add((ontology.hasColleague, RDFS.range, ontology.Person))
 g.add((ontology.hasHomePage, RDF.type, RDF.Property))
 g.add((ontology.hasHomePage, RDFS.label, Literal("hasHomePage", datatype=XSD.string)))
 g.add((ontology.hasHomePage, RDFS.domain, ontology.FullProfessor))
-g.add((ontology.hasHomePage, RDFS.range, XSD.string))
+g.add((ontology.hasHomePage, RDFS.range, RDFS.Literal))
 
-# Propiedad: affiliatedWith (según las instrucciones del texto)
+# Propiedad: affiliatedWith
 g.add((ontology.affiliatedWith, RDF.type, RDF.Property))
 g.add((ontology.affiliatedWith, RDFS.label, Literal("affiliatedWith", datatype=XSD.string)))
 g.add((ontology.affiliatedWith, RDFS.domain, ontology.Person))
@@ -167,25 +167,29 @@ Spanish: Crea los individuos que aparecen en el diagrama, en la sección «Datos
 English: Create the individuals shown in the diagram under "Datos". Link them with the same relationships shown in the diagram."
 """
 
-# Definimos los espacios de nombres para los datos
-person = Namespace("http://oeg.fi.upm.es/resource/person/")
 university = Namespace("http://oeg.fi.upm.es/resource/university/")
+g.bind("university", university)
 
-# Declarar los tipos de los individuos
+# Tipos y etiquetas
 g.add((person.Raul, RDF.type, ontology.FullProfessor))
+g.add((person.Raul, RDFS.label, Literal("Raúl", datatype=XSD.string)))
+
 g.add((person.Juan, RDF.type, ontology.AssistantProfessor))
+g.add((person.Juan, RDFS.label, Literal("Juan", datatype=XSD.string)))
+
 g.add((person.Sven, RDF.type, ontology.Person))
+g.add((person.Sven, RDFS.label, Literal("Sven", datatype=XSD.string)))
+
 g.add((university.Mannheim, RDF.type, ontology.University))
 
-# Relaciones entre los individuos
+# Relaciones
 g.add((person.Raul, ontology.hasColleague, person.Juan))
 g.add((person.Juan, ontology.hasColleague, person.Sven))
 g.add((person.Sven, ontology.affiliatedWith, university.Mannheim))
 
-# Propiedades de datos / Literales
+# Datos
 g.add((person.Raul, ontology.hasHomePage, Literal("http://oeg.fi.upm.es", datatype=XSD.string)))
 g.add((person.Juan, ontology.hasName, Literal("Juan Cano de Benito", datatype=XSD.string)))
-
 
 # Visualize the results
 for s, p, o in g:
@@ -205,19 +209,9 @@ English: Add to the individual person:Juan the email address (juan.cano@upm.es),
 foaf = Namespace("http://xmlns.com/foaf/0.1/")
 g.bind("foaf", foaf)
 
-vcard = Namespace("http://www.w3.org/2001/vcard-rdf/3.0#")
-g.bind("vcard", vcard)
-person = Namespace("http://oeg.fi.upm.es/resource/person/")
-
-# Añadir la dirección de email
-g.add((person.Juan, vcard.EMAIL, Literal("juan.cano@upm.es", datatype=XSD.string)))
-
-# Añadir el nombre
-g.add((person.Juan, vcard.Given, Literal("Juan", datatype=XSD.string)))
-
-# Añadir los apellidos
-g.add((person.Juan, vcard.Family, Literal("Cano", datatype=XSD.string)))
-
+g.add((person.Juan, foaf.mbox, Literal("juan.cano@upm.es", datatype=XSD.string)))
+g.add((person.Juan, foaf.givenName, Literal("Juan", datatype=XSD.string)))
+g.add((person.Juan, foaf.familyName, Literal("Cano de Benito", datatype=XSD.string)))
 
 # Visualize the results
 for s, p, o in g:
