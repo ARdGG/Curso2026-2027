@@ -135,13 +135,12 @@ English: List the name and type of those who know Curry (in SPARQL only). Use na
 
 query =  """
 PREFIX ns: <http://oeg.fi.upm.es/def/people#>
-PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-PREFIX vcard: <http://www.w3.org/2001/vcard-rdf/3.0#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT ?name ?type WHERE {
-  ?person foaf:knows ?curry .
-  ?curry vcard:Family "Curry" .
-  ?person vcard:Given ?name .
+  ?person ns:knows ?curry .
+  ?curry rdfs:label "Curry" .
+  ?person rdfs:label ?name .
   ?person a ?type .
 }
 """
@@ -162,17 +161,12 @@ English: List the name of those entities who have a colleague with a dog, or tha
 
 query =  """
 PREFIX ns: <http://oeg.fi.upm.es/def/people#>
-PREFIX vcard: <http://www.w3.org/2001/vcard-rdf/3.0#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?name WHERE {
-  # Buscamos a la persona que tiene un colega (1 salto) o un colega de un colega (2 saltos)
   ?person (ns:hasColleague | ns:hasColleague/ns:hasColleague) ?colleague .
-
-  # Ese colega final debe tener un animal (perro)
-  ?colleague ns:hasAnimal ?dog .
-
-  # Sacamos el nombre de la persona original para mostrarlo
-  ?person vcard:Given ?name .
+  ?colleague ns:ownsPet ?pet .
+  ?person rdfs:label ?name .
 }
 """
 
