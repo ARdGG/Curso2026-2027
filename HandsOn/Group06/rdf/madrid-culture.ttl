@@ -378,7 +378,7 @@
     ns1:email "bib.acuna@madrid.org" ;
     ns1:hasAccessibility <http://w3id.org/madrid-culture/resource/accessibility/1771> ;
     ns1:hasAddress <http://w3id.org/madrid-culture/resource/address/1771> ;
-    ns1:transport "Metro: Arg&amp;uuml;elles (líneas 3, 4 y 6)." ;
+    ns1:transport "Metro: Argüelles (líneas 3, 4 y 6)." ;
     ns1:type "BibliotecasPublicas" .
 
 <http://w3id.org/madrid-culture/resource/library/1773> a ns1:Library ;
@@ -3035,7 +3035,7 @@
     ns1:locatedInDistrict <http://w3id.org/madrid-culture/resource/district/6> ;
     ns1:locatedInNeighborhood <http://w3id.org/madrid-culture/resource/neighborhood/6-2> ;
     ns1:postalCode "28020" ;
-    ns1:streetAddress "CALLE LA CORU&amp;Ntilde;A, 18" .
+    ns1:streetAddress "CALLE LA CORUÑA, 18" .
 
 <http://w3id.org/madrid-culture/resource/address/2107> a ns1:Address ;
     ns1:locatedInDistrict <http://w3id.org/madrid-culture/resource/district/7> ;
@@ -3167,7 +3167,7 @@
     ns1:locatedInDistrict <http://w3id.org/madrid-culture/resource/district/15> ;
     ns1:locatedInNeighborhood <http://w3id.org/madrid-culture/resource/neighborhood/15-1> ;
     ns1:postalCode "28017" ;
-    ns1:streetAddress "CALLE NUESTRA SE&amp;Ntilde;ORA DEL VILLAR, 6" .
+    ns1:streetAddress "CALLE NUESTRA SEÑORA DEL VILLAR, 6" .
 
 <http://w3id.org/madrid-culture/resource/address/5349304> a ns1:Address ;
     ns1:locatedInDistrict <http://w3id.org/madrid-culture/resource/district/1> ;

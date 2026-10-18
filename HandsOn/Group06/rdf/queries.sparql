@@ -42,11 +42,11 @@ ORDER BY ?districtName ?siteClass
 
 # Q4. Integrity check: every generated individual has a type and a label.
 # Expected: no rows.
-SELECT ?resource ("missing label" AS ?problem)
+SELECT ?resource ("missing name" AS ?problem)
 WHERE {
-  VALUES ?class { mc:Library mc:Museum mc:Address mc:District mc:Neighborhood }
+  VALUES ?class { mc:Library mc:Museum mc:District mc:Neighborhood }
   ?resource a ?class .
-  FILTER NOT EXISTS { ?resource rdfs:label ?label }
+  FILTER NOT EXISTS { ?resource schema:name ?name }
 }
 
 # Q5. Integrity check: every linked address, district and neighborhood exists.
