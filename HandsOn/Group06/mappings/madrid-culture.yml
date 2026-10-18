@@ -12,7 +12,6 @@ mappings:
     s: res:library/$(PK)
     po:
       - [a, mc:Library]
-      - [rdfs:label, $(NOMBRE)]
       - [schema:name, $(NOMBRE)]
       - [schema:openingHours, $(HORARIO), xsd:string]
       - [mc:transport, $(TRANSPORTE), xsd:string]
@@ -31,7 +30,6 @@ mappings:
     s: res:museum/$(PK)
     po:
       - [a, mc:Museum]
-      - [rdfs:label, $(NOMBRE)]
       - [schema:name, $(NOMBRE)]
       - [schema:openingHours, $(HORARIO), xsd:string]
       - [mc:transport, $(TRANSPORTE), xsd:string]
@@ -50,7 +48,7 @@ mappings:
     s: res:accessibility/(PK)
     po:
       - [a, mc:Accessibility]
-      - [mc:accesible, $(ACCESIBLE), xsd:boolean]
+      - [mc:accessible, $(ACCESIBLE), xsd:boolean]
       - [mc:partiallyAccessible, $(PARCIALMENTE-ACCESIBLE), xsd:boolean]
       - [mc:noInfoAccessibility, $(SIN-INFORMACION-ACCESIBILIDAD), xsd:boolean]
       - [mc:signLanguage, $(LENGUA-SIGNO), xsd:boolean]
@@ -63,7 +61,7 @@ mappings:
     s: res:accessibility/(PK)
     po:
       - [a, mc:Accessibility]
-      - [mc:accesible, $(ACCESIBLE), xsd:boolean]
+      - [mc:accessible, $(ACCESIBLE), xsd:boolean]
       - [mc:partiallyAccessible, $(PARCIALMENTE-ACCESIBLE), xsd:boolean]
       - [mc:noInfoAccessibility, $(SIN-INFORMACION-ACCESIBILIDAD), xsd:boolean]
       - [mc:signLanguage, $(LENGUA-SIGNO), xsd:boolean]
