@@ -7,14 +7,15 @@
 @prefix bm: <http://breathemadrid.es/ontology#> .
 @prefix bmr: <http://breathemadrid.es/resource/> .
 @base <http://breathemadrid.es/mappings/> .
+@prefix wd: <http://www.wikidata.org/entity/> .
 
 # Run with HandsOn/Group04 as the working directory.
 
 # Stations, station types and municipality
-# Source: csv/212629-0-estaciones-control-aire-updated.csv
+# Source: csv/212629-0-estaciones-control-aire-with-links.csv
 
 <#StationMap> a rr:TriplesMap ;
-  rml:logicalSource [ rml:source "csv/212629-0-estaciones-control-aire-updated.csv" ; rml:referenceFormulation ql:CSV ] ;
+  rml:logicalSource [ rml:source "csv/212629-0-estaciones-control-aire-with-links.csv" ; rml:referenceFormulation ql:CSV ] ;
   rr:subjectMap [
     rr:template "http://breathemadrid.es/resource/station/{CODIGO}" ;
     rr:class bm:Station
@@ -37,10 +38,13 @@
     rr:objectMap [ rr:template "http://breathemadrid.es/resource/stationtype/{COD_TIPO}" ;
       rr:termType rr:IRI ] ] ;
   rr:predicateObjectMap [ rr:predicate bm:locatedIn ;
-    rr:objectMap [ rr:constant <http://breathemadrid.es/resource/municipality/28079> ] ] .
+    rr:objectMap [ rr:constant <http://breathemadrid.es/resource/municipality/28079> ] ] ;
+  rr:predicateObjectMap [ rr:predicate rdfs:seeAlso ;
+    rr:objectMap [ rr:template "http://www.wikidata.org/entity/{WIKIDATA_LUGAR}" ;
+      rr:termType rr:IRI ] ] .
 
 <#StationTypeMap> a rr:TriplesMap ;
-  rml:logicalSource [ rml:source "csv/212629-0-estaciones-control-aire-updated.csv" ; rml:referenceFormulation ql:CSV ] ;
+  rml:logicalSource [ rml:source "csv/212629-0-estaciones-control-aire-with-links.csv" ; rml:referenceFormulation ql:CSV ] ;
   rr:subjectMap [
     rr:template "http://breathemadrid.es/resource/stationtype/{COD_TIPO}" ;
     rr:class bm:StationType
@@ -53,7 +57,7 @@
     rr:objectMap [ rml:reference "NOM_TIPO" ; rr:datatype xsd:string ] ] .
 
 <#MunicipalityMap> a rr:TriplesMap ;
-  rml:logicalSource [ rml:source "csv/212629-0-estaciones-control-aire-updated.csv" ; rml:referenceFormulation ql:CSV ] ;
+  rml:logicalSource [ rml:source "csv/212629-0-estaciones-control-aire-with-links.csv" ; rml:referenceFormulation ql:CSV ] ;
   rr:subjectMap [
     rr:constant <http://breathemadrid.es/resource/municipality/28079> ;
     rr:class bm:Municipality
@@ -69,7 +73,7 @@
 
 
 # Observations and pollutants
-# Sources: csv/calair_tiemporeal-updated.csv, csv/contaminantes.csv
+# Sources: csv/calair_tiemporeal-updated.csv, csv/contaminantes-with-links.csv
 
 
 <#ObservationMap>
@@ -161,7 +165,7 @@
     a rr:TriplesMap ;
 
     rml:logicalSource [
-        rml:source "csv/contaminantes.csv" ;
+        rml:source "csv/contaminantes-with-links.csv" ;
         rml:referenceFormulation ql:CSV
     ] ;
 
@@ -200,4 +204,12 @@
             rml:reference "UNIDAD" ;
             rr:datatype xsd:string
         ]
+    ] ;
+    rr:predicateObjectMap [
+        rr:predicate owl:sameAs ;
+        rr:objectMap [
+            rr:template "http://www.wikidata.org/entity/{WIKIDATA_ID}" ;
+            rr:termType rr:IRI
+        ]
     ] .
+
