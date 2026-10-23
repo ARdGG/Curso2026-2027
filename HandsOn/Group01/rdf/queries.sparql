@@ -1,0 +1,45 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX vocab: <http://smartcity.linkeddata.es/touristaccommodation/ontology/>
+
+# Query 1: Count accommodations created
+SELECT (COUNT(DISTINCT ?accommodation) AS ?totalAccommodations)
+WHERE {
+  ?accommodation a vocab:Accommodation .
+}
+
+# Query 2: List sample accommodations with their name and type
+SELECT ?accommodation ?name ?type
+WHERE {
+  ?accommodation a vocab:Accommodation ;
+                 vocab:hasName ?name ;
+                 vocab:hasType ?type .
+}
+LIMIT 20
+
+# Query 3: Count cities
+SELECT (COUNT(DISTINCT ?city) AS ?totalCities)
+WHERE {
+  ?city a vocab:City .
+}
+
+# Query 4: Retrieve accommodations with a postal code and city
+SELECT ?name ?postalCode ?cityName
+WHERE {
+  ?accommodation a vocab:Accommodation ;
+                 vocab:hasName ?name ;
+                 vocab:hasAddress ?address .
+  ?address vocab:postalCode ?postalCode ;
+           vocab:inCity ?city .
+  ?city rdfs:label ?cityName .
+}
+LIMIT 20
+
+# Query 5: Count accommodations by accommodation type
+SELECT ?type (COUNT(?accommodation) AS ?total)
+WHERE {
+  ?accommodation a vocab:Accommodation ;
+                 vocab:hasType ?type .
+}
+GROUP BY ?type
+ORDER BY DESC(?total)
