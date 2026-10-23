@@ -1,0 +1,116 @@
+@prefix ue:   <http://www.madridurbanenvironment.org/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+#    Districts
+#################################################################
+
+<http://www.madridurbanenvironment.org/resource/District/7>
+    a ue:District ;
+    rdfs:label "CHAMBERI"^^xsd:string ;
+    ue:districtCode "7"^^xsd:string .
+
+<http://www.madridurbanenvironment.org/resource/District/2>
+    a ue:District ;
+    rdfs:label "ARGANZUELA"^^xsd:string ;
+    ue:districtCode "2"^^xsd:string .
+
+#################################################################
+#    Neighborhoods
+#################################################################
+
+<http://www.madridurbanenvironment.org/resource/Neighborhood/72>
+    a ue:Neighborhood ;
+    rdfs:label "GAZTAMBIDE"^^xsd:string ;
+    ue:code "72"^^xsd:string ;
+    ue:belongsToDistrict <http://www.madridurbanenvironment.org/resource/District/7> .
+
+<http://www.madridurbanenvironment.org/resource/Neighborhood/25>
+    a ue:Neighborhood ;
+    rdfs:label "LEGAZPI"^^xsd:string ;
+    ue:code "25"^^xsd:string ;
+    ue:belongsToDistrict <http://www.madridurbanenvironment.org/resource/District/2> .
+
+#################################################################
+#    Drinking fountain (people only)
+#################################################################
+
+<http://www.madridurbanenvironment.org/resource/Fountain/10050012>
+    a ue:DrinkingFountain ;
+    rdfs:label "Fuente 10050012 - Calle de Arapiles"^^xsd:string ;
+    ue:name "Fuente 10050012 - Calle de Arapiles"^^xsd:string ;
+    ue:identifier "10050012"^^xsd:string ;
+    ue:classification "Fuentes de beber"^^xsd:string ;
+    ue:status "OPERATIVO"^^xsd:string ;
+    ue:intendedUse "PERSONAS"^^xsd:string ;
+    ue:streetType "CALLE"^^xsd:string ;
+    ue:streetName "ARAPILES"^^xsd:string ;
+    ue:streetNumber "14"^^xsd:string ;
+    ue:postalCode "28015"^^xsd:string ;
+    ue:utmX "440512.30"^^xsd:decimal ;
+    ue:utmY "4475120.55"^^xsd:decimal ;
+    ue:locatedInDistrict <http://www.madridurbanenvironment.org/resource/District/7> ;
+    ue:locatedInNeighborhood <http://www.madridurbanenvironment.org/resource/Neighborhood/72> .
+
+#################################################################
+#    Bench
+#################################################################
+
+<http://www.madridurbanenvironment.org/resource/Bench/200310>
+    a ue:Bench ;
+    rdfs:label "Banco 200310 - PASEO DE LA CHOPERA"^^xsd:string ;
+    ue:name "Banco 200310 - PASEO DE LA CHOPERA"^^xsd:string ;
+    ue:identifier "200310"^^xsd:string ;
+    ue:classification "Banco"^^xsd:string ;
+    ue:status "FUERA_DE_SERVICIO"^^xsd:string ;
+    ue:streetType "PASEO"^^xsd:string ;
+    ue:streetName "DE LA CHOPERA"^^xsd:string ;
+    ue:streetNumber "10"^^xsd:string ;
+    ue:postalCode "28045"^^xsd:string ;
+    ue:utmX "440980.12"^^xsd:decimal ;
+    ue:utmY "4472310.40"^^xsd:decimal ;
+    ue:locatedInDistrict <http://www.madridurbanenvironment.org/resource/District/2> ;
+    ue:locatedInNeighborhood <http://www.madridurbanenvironment.org/resource/Neighborhood/25> .
+
+#################################################################
+#    Park
+#################################################################
+
+<http://www.madridurbanenvironment.org/resource/Park/6001234>
+    a ue:Park ;
+    rdfs:label "Parque de Madrid Rio (tramo Arganzuela)"^^xsd:string ;
+    ue:name "Parque de Madrid Rio (tramo Arganzuela)"^^xsd:string ;
+    ue:identifier "6001234"^^xsd:string ;
+    ue:description "Linear riverside park with cycling paths, playgrounds and promenades."^^xsd:string ;
+    ue:accessibilityLevel "1"^^xsd:integer ;
+    ue:webPage "https://www.madrid.es/"^^xsd:anyURI ;
+    ue:schedule "Abierto 24 horas"^^xsd:string ;
+    ue:streetType "PASEO"^^xsd:string ;
+    ue:streetName "DE LA CHOPERA"^^xsd:string ;
+    ue:streetNumber "S/N"^^xsd:string ;
+    ue:locality "MADRID"^^xsd:string ;
+    ue:province "MADRID"^^xsd:string ;
+    ue:postalCode "28045"^^xsd:string ;
+    ue:utmX "440850"^^xsd:decimal ;
+    ue:utmY "4472400"^^xsd:decimal ;
+    ue:locatedInDistrict <http://www.madridurbanenvironment.org/resource/District/2> ;
+    ue:locatedInNeighborhood <http://www.madridurbanenvironment.org/resource/Neighborhood/25> .
+
+#################################################################
+#    Public toilet
+#################################################################
+
+<http://www.madridurbanenvironment.org/resource/PublicToilet/030112BCN>
+    a ue:PublicToilet ;
+    rdfs:label "PLAZA DE OLAVIDE,1"^^xsd:string ;
+    ue:name "PLAZA DE OLAVIDE,1"^^xsd:string ;
+    ue:identifier "030112BCN"^^xsd:string ;
+    ue:status "OPERATIVO"^^xsd:string ;
+    ue:streetType "PLAZA"^^xsd:string ;
+    ue:streetName "DE OLAVIDE"^^xsd:string ;
+    ue:streetNumber "1"^^xsd:string ;
+    ue:utmX "441020.77"^^xsd:decimal ;
+    ue:utmY "4475390.10"^^xsd:decimal ;
+    ue:locatedInDistrict <http://www.madridurbanenvironment.org/resource/District/7> ;
+    ue:locatedInNeighborhood <http://www.madridurbanenvironment.org/resource/Neighborhood/72> .
