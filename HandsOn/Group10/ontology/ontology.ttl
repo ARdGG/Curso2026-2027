@@ -1,0 +1,105 @@
+@prefix cls: <https://group10.org/air-quality-2026/ontology/classes/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prop: <https://group10.org/air-quality-2026/ontology/properties/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcterms:creator a owl:AnnotationProperty .
+
+dcterms:title a owl:AnnotationProperty .
+
+owl:versionInfo a owl:AnnotationProperty .
+
+<https://group10.org/air-quality-2026/ontology> a owl:Ontology ;
+    dcterms:creator "Group 10" ;
+    dcterms:title "Air quality meteorological observations ontology" ;
+    owl:versionInfo "2.0" ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+prop:hasDay a owl:DatatypeProperty ;
+    rdfs:label "has day" ;
+    rdfs:domain cls:Observation ;
+    rdfs:range xsd:integer .
+
+prop:hasHour a owl:DatatypeProperty ;
+    rdfs:label "has hour" ;
+    rdfs:domain cls:Observation ;
+    rdfs:range xsd:integer .
+
+prop:hasMeasurementCode a owl:DatatypeProperty ;
+    rdfs:label "has measurement code" ;
+    rdfs:domain cls:MeasurementType ;
+    rdfs:range xsd:integer .
+
+prop:hasMeasurementType a owl:ObjectProperty ;
+    rdfs:label "has measurement type" ;
+    rdfs:domain cls:SamplePoint ;
+    rdfs:range cls:MeasurementType .
+
+prop:hasMonth a owl:DatatypeProperty ;
+    rdfs:label "has month" ;
+    rdfs:domain cls:Observation ;
+    rdfs:range xsd:integer .
+
+prop:hasMunicipalityCode a owl:DatatypeProperty ;
+    rdfs:label "has municipality code" ;
+    rdfs:domain cls:Municipality ;
+    rdfs:range xsd:string .
+
+prop:hasSamplePoint a owl:ObjectProperty ;
+    rdfs:label "has sample point" ;
+    rdfs:domain cls:Observation ;
+    rdfs:range cls:SamplePoint .
+
+prop:hasStation a owl:ObjectProperty ;
+    rdfs:label "has station" ;
+    rdfs:domain cls:SamplePoint ;
+    rdfs:range cls:Station .
+
+prop:hasStationCode a owl:DatatypeProperty ;
+    rdfs:label "has station code" ;
+    rdfs:domain cls:Station ;
+    rdfs:range xsd:integer .
+
+prop:hasTechnique a owl:DatatypeProperty ;
+    rdfs:label "has technique" ;
+    rdfs:domain cls:SamplePoint ;
+    rdfs:range xsd:integer .
+
+prop:hasValue a owl:DatatypeProperty ;
+    rdfs:label "has value" ;
+    rdfs:domain cls:Observation ;
+    rdfs:range xsd:decimal .
+
+prop:hasYear a owl:DatatypeProperty ;
+    rdfs:label "has year" ;
+    rdfs:domain cls:Observation ;
+    rdfs:range xsd:integer .
+
+prop:isValidated a owl:DatatypeProperty ;
+    rdfs:label "is validated" ;
+    rdfs:domain cls:Observation ;
+    rdfs:range xsd:boolean .
+
+prop:locatedIn a owl:ObjectProperty ;
+    rdfs:label "located in" ;
+    rdfs:domain cls:Station ;
+    rdfs:range cls:Municipality .
+
+cls:MeasurementType a owl:Class ;
+    rdfs:label "Measurement Type" .
+
+cls:Municipality a owl:Class ;
+    rdfs:label "Municipality" .
+
+cls:Station a owl:Class ;
+    rdfs:label "Station" .
+
+cls:SamplePoint a owl:Class ;
+    rdfs:label "Sample Point" .
+
+cls:Observation a owl:Class ;
+    rdfs:label "Observation" .
+
