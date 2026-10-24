@@ -29,7 +29,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -58,7 +58,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Arganzuela (Q2000929) for cells containing \"Arganzuela\" in column DISTRITO"
+    "description": "Match specific item Arganzuela (Q2000929) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -67,7 +67,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -96,7 +96,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Barajas (Q807230) for cells containing \"Barajas\" in column DISTRITO"
+    "description": "Match specific item Barajas (Q807230) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -105,7 +105,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -134,7 +134,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Carabanchel (Q1001991) for cells containing \"Carabanchel\" in column DISTRITO"
+    "description": "Match specific item Carabanchel (Q1001991) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -143,7 +143,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -172,7 +172,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro (Q1763376) for cells containing \"Centro\" in column DISTRITO"
+    "description": "Match specific item Centro (Q1763376) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -181,7 +181,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -210,7 +210,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Chamartín (Q1766348) for cells containing \"Chamartin\" in column DISTRITO"
+    "description": "Match specific item Chamartín (Q1766348) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -219,7 +219,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -248,7 +248,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Chamberí (Q1763370) for cells containing \"Chamberi\" in column DISTRITO"
+    "description": "Match specific item Chamberí (Q1763370) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -257,7 +257,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -286,7 +286,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Ciudad Lineal (Q1763694) for cells containing \"Ciudad Lineal\" in column DISTRITO"
+    "description": "Match specific item Ciudad Lineal (Q1763694) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -295,7 +295,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -324,7 +324,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Fuencarral-El Pardo (Q656196) for cells containing \"Fuencarral-El Pardo\" in column DISTRITO"
+    "description": "Match specific item Fuencarral-El Pardo (Q656196) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -333,7 +333,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -362,7 +362,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Hortaleza (Q1928529) for cells containing \"Hortaleza\" in column DISTRITO"
+    "description": "Match specific item Hortaleza (Q1928529) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -371,7 +371,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -400,7 +400,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Latina (Q794954) for cells containing \"Latina\" in column DISTRITO"
+    "description": "Match specific item Latina (Q794954) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -409,7 +409,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -438,7 +438,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Moncloa-Aravaca (Q2017682) for cells containing \"Moncloa-Aravaca\" in column DISTRITO"
+    "description": "Match specific item Moncloa-Aravaca (Q2017682) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -447,7 +447,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -476,7 +476,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Moratalaz (Q2076109) for cells containing \"Moratalaz\" in column DISTRITO"
+    "description": "Match specific item Moratalaz (Q2076109) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -485,7 +485,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -514,7 +514,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Puente de Vallecas (Q2003054) for cells containing \"Puente De Vallecas\" in column DISTRITO"
+    "description": "Match specific item Puente de Vallecas (Q2003054) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -523,7 +523,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -552,7 +552,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Retiro (Q2002296) for cells containing \"Retiro\" in column DISTRITO"
+    "description": "Match specific item Retiro (Q2002296) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -561,7 +561,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -590,7 +590,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Salamanca (Q1773521) for cells containing \"Salamanca\" in column DISTRITO"
+    "description": "Match specific item Salamanca (Q1773521) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -599,7 +599,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -628,7 +628,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item San Blas-Canillejas (Q2001937) for cells containing \"San Blas-Canillejas\" in column DISTRITO"
+    "description": "Match specific item San Blas-Canillejas (Q2001937) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -637,7 +637,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -666,7 +666,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Tetuán (Q1773540) for cells containing \"Tetuan\" in column DISTRITO"
+    "description": "Match specific item Tetuán (Q1773540) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -675,7 +675,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -704,7 +704,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Usera (Q953368) for cells containing \"Usera\" in column DISTRITO"
+    "description": "Match specific item Usera (Q953368) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -713,7 +713,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -742,7 +742,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Vicálvaro (Q589403) for cells containing \"Vicalvaro\" in column DISTRITO"
+    "description": "Match specific item Vicálvaro (Q589403) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -751,7 +751,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -780,7 +780,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Villa de Vallecas (Q1947988) for cells containing \"Villa De Vallecas\" in column DISTRITO"
+    "description": "Match specific item Villa de Vallecas (Q1947988) to cells in column DISTRITO"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -789,7 +789,7 @@
         {
           "type": "list",
           "name": "DISTRITO",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "DISTRITO",
           "invert": false,
           "omitBlank": false,
@@ -818,7 +818,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Villaverde (Q919536) for cells containing \"Villaverde\" in column DISTRITO"
+    "description": "Match specific item Villaverde (Q919536) to cells in column DISTRITO"
   },
   {
     "op": "core/recon",
@@ -851,7 +851,7 @@
     },
     "columnName": "NOMBRE",
     "clearData": false,
-    "description": "Discard recon judgments in column NOMBRE (revisión manual de candidatos)"
+    "description": "Discard recon judgments for cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -860,7 +860,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -889,7 +889,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Aluche (Q63191263) for cells containing \"Centro Deportivo Municipal Aluche\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Aluche (Q63191263) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -898,7 +898,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -927,7 +927,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Antonio Díaz Miguel (Q63191265) for cells containing \"Centro Deportivo Municipal Antonio Díaz Miguel\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Antonio Díaz Miguel (Q63191265) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -936,7 +936,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -965,7 +965,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Cerro Almodóvar (Q63191254) for cells containing \"Centro Deportivo Municipal Cerro Almodóvar\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Cerro Almodóvar (Q63191254) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -974,7 +974,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1003,7 +1003,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Concepción (Q63191273) for cells containing \"Centro Deportivo Municipal Concepción\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Concepción (Q63191273) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1012,7 +1012,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1041,7 +1041,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Entrevías (Q63191249) for cells containing \"Centro Deportivo Municipal Entrevías\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Entrevías (Q63191249) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1050,7 +1050,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1079,7 +1079,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Fernando Martín (Q56086641) for cells containing \"Centro Deportivo Municipal Fernando Martín\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Fernando Martín (Q56086641) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1088,7 +1088,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1117,7 +1117,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Francisco Fernández Ochoa (Q63191262) for cells containing \"Centro Deportivo Municipal Francisco Fernández Ochoa\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Francisco Fernández Ochoa (Q63191262) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1126,7 +1126,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1155,7 +1155,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Félix Rubio (Q63191223) for cells containing \"Centro Deportivo Municipal Félix Rubio\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Félix Rubio (Q63191223) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1164,7 +1164,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1193,7 +1193,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Gallur (Q63191274) for cells containing \"Centro Deportivo Municipal Gallur\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Gallur (Q63191274) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1202,7 +1202,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1231,7 +1231,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Polideportivo de Hortaleza (Q110749268) for cells containing \"Centro Deportivo Municipal Hortaleza\" in column NOMBRE"
+    "description": "Match specific item Polideportivo de Hortaleza (Q110749268) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1240,7 +1240,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1269,7 +1269,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal La Almudena (Q63191226) for cells containing \"Centro Deportivo Municipal La Almudena\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal La Almudena (Q63191226) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1278,7 +1278,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1307,7 +1307,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal La Chopera (Q135957017) for cells containing \"Centro Deportivo Municipal La Chopera\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal La Chopera (Q135957017) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1316,7 +1316,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1345,7 +1345,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal La Elipa (Q63191248) for cells containing \"Centro Deportivo Municipal La Elipa\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal La Elipa (Q63191248) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1354,7 +1354,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1383,7 +1383,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal La Fundi (Q63191213) for cells containing \"Centro Deportivo Municipal La Fundi\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal La Fundi (Q63191213) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1392,7 +1392,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1421,7 +1421,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Margot Moles (Q63191268) for cells containing \"Centro Deportivo Municipal Margot Moles\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Margot Moles (Q63191268) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1430,7 +1430,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1459,7 +1459,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Polideportivo Municipal Marqués de Samaranch (Q30540859) for cells containing \"Centro Deportivo Municipal Marqués de Samaranch\" in column NOMBRE"
+    "description": "Match specific item Polideportivo Municipal Marqués de Samaranch (Q30540859) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1468,7 +1468,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1497,7 +1497,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Palomeras (Q63191260) for cells containing \"Centro Deportivo Municipal Palomeras\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Palomeras (Q63191260) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1506,7 +1506,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1535,7 +1535,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal GO fit Peñagrande (Q63191222) for cells containing \"Centro Deportivo Municipal Peñagrande GoFit\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal GO fit Peñagrande (Q63191222) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1544,7 +1544,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1573,7 +1573,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Peñuelas (Q63191214) for cells containing \"Centro Deportivo Municipal Peñuelas\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Peñuelas (Q63191214) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1582,7 +1582,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1611,7 +1611,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Pradillo (Q63191256) for cells containing \"Centro Deportivo Municipal Pradillo\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Pradillo (Q63191256) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1620,7 +1620,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1649,7 +1649,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Pueblo Nuevo (Q63191253) for cells containing \"Centro Deportivo Municipal Pueblo Nuevo\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Pueblo Nuevo (Q63191253) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1658,7 +1658,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1687,7 +1687,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Raúl González (Q63191257) for cells containing \"Centro Deportivo Municipal Raúl González\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Raúl González (Q63191257) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1696,7 +1696,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1725,7 +1725,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal San Blas (Q63191258) for cells containing \"Centro Deportivo Municipal San Blas\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal San Blas (Q63191258) to cells in column NOMBRE"
   },
   {
     "op": "core/recon-match-specific-topic-to-cells",
@@ -1734,7 +1734,7 @@
         {
           "type": "list",
           "name": "NOMBRE",
-          "expression": "value",
+          "expression": "grel:value",
           "columnName": "NOMBRE",
           "invert": false,
           "omitBlank": false,
@@ -1763,7 +1763,7 @@
     },
     "identifierSpace": "http://www.wikidata.org/entity/",
     "schemaSpace": "http://www.wikidata.org/prop/direct/",
-    "description": "Match item Centro Deportivo Municipal Vicente del Bosque (Q63191252) for cells containing \"Centro Deportivo Municipal Vicente del Bosque\" in column NOMBRE"
+    "description": "Match specific item Centro Deportivo Municipal Vicente del Bosque (Q63191252) to cells in column NOMBRE"
   },
   {
     "op": "core/column-addition",
