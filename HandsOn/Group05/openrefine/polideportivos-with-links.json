@@ -1790,5 +1790,25 @@
     "newColumnName": "WIKIDATA-CENTRO",
     "columnInsertIndex": 31,
     "description": "Create column WIKIDATA-CENTRO at index 31 based on column NOMBRE using expression grel:if(isNonBlank(cell.recon.match), \"http://www.wikidata.org/entity/\" + cell.recon.match.id, \"\")"
+  },
+  {
+    "op": "core/recon-discard-judgments",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "DISTRITO",
+    "clearData": true,
+    "description": "Discard recon judgments and clear recon data for cells in column DISTRITO"
+  },
+  {
+    "op": "core/recon-discard-judgments",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "NOMBRE",
+    "clearData": true,
+    "description": "Discard recon judgments and clear recon data for cells in column NOMBRE"
   }
 ]
