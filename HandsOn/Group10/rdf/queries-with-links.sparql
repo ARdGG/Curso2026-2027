@@ -21,7 +21,7 @@ WHERE {
   OPTIONAL { ?municipality owl:sameAs ?wikidata . }
 }
 
-#Q3. Stations with the code and the Wikidata entity of their municipality
+#Q3. Stations with the name and the Wikidata entity of their municipality
 SELECT ?stationName ?municipalityName ?wikidata
 WHERE {
   ?station a cls:Station;
